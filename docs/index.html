@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ImRaghav Technologies — Secure Digital Asset Management & AI Media Intelligence</title>
+<meta name="description" content="ImRaghav Technologies builds secure digital asset management and AI media processing platforms for defence, government, broadcast and media organisations.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230b1220'/%3E%3Cpath d='M9 23V9h4v14zM16 23V9h5a5 5 0 0 1 0 10h-1l4 4h-5l-3-3z' fill='%2338bdf8'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#070b14;--bg2:#0b1220;--card:#0f1829;--line:#1c2a42;--text:#e6edf7;--muted:#8a9bb5;--accent:#38bdf8;--accent2:#22d3a6;--warn:#f5b84a;--max:1180px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font:16px/1.65 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+.mono{font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+h1{font-size:clamp(36px,6vw,64px);line-height:1.08;letter-spacing:-.03em;font-weight:800}
+h2{font-size:clamp(28px,4vw,42px);line-height:1.15;letter-spacing:-.02em;font-weight:700;margin:10px 0 14px}
+h3{font-size:19px;font-weight:600;margin-bottom:8px}
+p.lead{color:var(--muted);font-size:18px;max-width:680px}
+.grad{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+/* nav */
+nav{position:sticky;top:0;z-index:50;background:rgba(7,11,20,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:66px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:17px}
+.logo i{width:30px;height:30px;border-radius:8px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:grid;place-items:center;font-style:normal;color:#04121c;font-weight:800;font-size:14px}
+.links{display:flex;gap:28px;font-size:14px;color:var(--muted)}
+.links a:hover{color:var(--text)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 20px;border-radius:9px;font-weight:600;font-size:14px;border:1px solid var(--line);transition:.2s}
+.btn.primary{background:var(--accent);color:#04121c;border-color:var(--accent)}
+.btn.primary:hover{background:#7dd3fc}
+.btn:hover{border-color:var(--accent)}
+.menu{display:none;background:none;border:0;color:var(--text);font-size:24px;cursor:pointer}
+@media(max-width:900px){.links{display:none}.links.open{display:flex;flex-direction:column;position:absolute;top:66px;left:0;right:0;background:var(--bg2);padding:20px;border-bottom:1px solid var(--line)}.menu{display:block}nav .btn.primary{display:none}}
+/* hero */
+.hero{padding:100px 0 80px;position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;inset:0;background:radial-gradient(800px 400px at 75% 10%,rgba(56,189,248,.16),transparent 60%),radial-gradient(600px 300px at 10% 90%,rgba(34,211,166,.10),transparent 60%);pointer-events:none}
+.hero:after{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:56px 56px;opacity:.25;mask-image:radial-gradient(ellipse at center,#000 30%,transparent 75%);pointer-events:none}
+.hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center}
+.hero p.lead{margin:22px 0 32px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.badges{display:flex;gap:18px;flex-wrap:wrap;margin-top:36px;color:var(--muted);font-size:13px}
+.badges span:before{content:"✓ ";color:var(--accent2)}
+.console{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;font-family:"JetBrains Mono",monospace;font-size:12.5px;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+.console .bar{display:flex;gap:6px;margin-bottom:14px}.console .bar b{width:10px;height:10px;border-radius:50%;background:#2a3a55}
+.console .row{display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px dashed var(--line);color:var(--muted)}
+.console .row:last-child{border:0}
+.ok{color:var(--accent2)}.run{color:var(--accent)}.wt{color:var(--warn)}
+.meter{height:6px;background:#16233a;border-radius:4px;margin:14px 0 4px;overflow:hidden}.meter i{display:block;height:100%;width:72%;background:linear-gradient(90deg,var(--accent),var(--accent2));animation:fill 3s ease-in-out infinite alternate}
+@keyframes fill{from{width:38%}to{width:94%}}
+@media(max-width:900px){.hero .wrap{grid-template-columns:1fr}.hero{padding:64px 0}}
+/* sections */
+section{padding:96px 0;border-top:1px solid var(--line)}
+section.alt{background:var(--bg2)}
+.head{max-width:760px;margin-bottom:48px}
+.grid{display:grid;gap:20px}
+.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}.g2{grid-template-columns:repeat(2,1fr)}
+@media(max-width:960px){.g3,.g4{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.g2,.g3,.g4{grid-template-columns:1fr}section{padding:64px 0}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:26px;transition:.25s}
+.card:hover{border-color:#2d4468;transform:translateY(-3px)}
+.card p{color:var(--muted);font-size:15px}
+.ico{width:44px;height:44px;border-radius:10px;display:grid;place-items:center;background:rgba(56,189,248,.1);color:var(--accent);margin-bottom:18px;font-size:20px}
+.card ul{list-style:none;margin-top:14px}
+.card li{font-size:14px;color:var(--muted);padding:5px 0 5px 20px;position:relative}
+.card li:before{content:"";position:absolute;left:0;top:13px;width:8px;height:2px;background:var(--accent)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center}
+.stats b{display:block;font-size:40px;font-weight:800;letter-spacing:-.02em}
+.stats span{color:var(--muted);font-size:14px}
+@media(max-width:640px){.stats{grid-template-columns:repeat(2,1fr)}}
+/* pipeline */
+.pipe{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;counter-reset:s}
+.pipe .card{counter-increment:s;padding:22px}
+.pipe .card:before{content:"0" counter(s);font-family:"JetBrains Mono",monospace;color:var(--accent);font-size:13px;display:block;margin-bottom:10px}
+@media(max-width:960px){.pipe{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.pipe{grid-template-columns:1fr}}
+/* tabs */
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
+.tabs button{background:transparent;border:1px solid var(--line);color:var(--muted);padding:10px 18px;border-radius:30px;font:600 14px Inter,sans-serif;cursor:pointer}
+.tabs button.on{background:var(--accent);color:#04121c;border-color:var(--accent)}
+.panel{display:none}.panel.on{display:grid}
+.split{grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+@media(max-width:860px){.split{grid-template-columns:1fr}}
+.tag{display:inline-block;font-size:12px;padding:4px 10px;border-radius:20px;border:1px solid var(--line);color:var(--muted);margin:0 6px 8px 0}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{text-align:left;padding:14px 12px;border-bottom:1px solid var(--line)}
+th{color:var(--muted);font-weight:500;font-size:13px}
+td:not(:first-child){color:var(--muted)}
+.tw{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:var(--card)}
+details{border-bottom:1px solid var(--line);padding:20px 0}
+summary{cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between}
+summary:after{content:"+";color:var(--accent);font-size:20px}details[open] summary:after{content:"−"}
+details p{color:var(--muted);margin-top:10px}
+form{display:grid;gap:14px}
+input,select,textarea{width:100%;background:var(--bg);border:1px solid var(--line);color:var(--text);border-radius:9px;padding:13px 14px;font:15px Inter,sans-serif}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--accent)}
+footer{border-top:1px solid var(--line);padding:56px 0 30px;color:var(--muted);font-size:14px}
+footer .grid{grid-template-columns:2fr 1fr 1fr 1fr;margin-bottom:40px}
+footer h4{color:var(--text);font-size:14px;margin-bottom:12px}
+footer a{display:block;padding:3px 0}footer a:hover{color:var(--text)}
+@media(max-width:760px){footer .grid{grid-template-columns:1fr 1fr}}
+.reveal{opacity:0;transform:translateY(18px);transition:.7s}.reveal.in{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<nav>
+ <div class="wrap">
+  <a href="#" class="logo"><i>iR</i>ImRaghav Technologies</a>
+  <div class="links" id="links">
+   <a href="#platform">Platform</a><a href="#ai">AI Processing</a><a href="#industries">Industries</a><a href="#security">Security</a><a href="#deploy">Deployment</a><a href="#about">Company</a><a href="#contact">Contact</a>
+  </div>
+  <a href="#contact" class="btn primary">Request a briefing</a>
+  <button class="menu" aria-label="Menu" onclick="document.getElementById('links').classList.toggle('open')">☰</button>
+ </div>
+</nav>
+
+<header class="hero">
+ <div class="wrap">
+  <div>
+   <div class="mono">Digital Asset Management · AI Media Intelligence</div>
+   <h1 style="margin-top:16px">Mission-grade control over every <span class="grad">image, video and signal</span> you own.</h1>
+   <p class="lead">ImRaghav Technologies builds secure digital asset management and AI processing platforms for defence, government, broadcast and media organisations — from ingest at the edge to search, analysis and controlled distribution.</p>
+   <div class="cta"><a href="#contact" class="btn primary">Request a briefing →</a><a href="#platform" class="btn">Explore the platform</a></div>
+   <div class="badges"><span>Air-gapped & on-prem ready</span><span>Zero-trust access</span><span>Full chain of custody</span></div>
+  </div>
+  <div class="console" aria-hidden="true">
+   <div class="bar"><b></b><b></b><b></b></div>
+   <div class="mono" style="margin-bottom:10px">vault://ops-archive / ingest queue</div>
+   <div class="row"><span>ISR_FMV_0412.ts · 4K · 2.1 GB</span><span class="ok">INDEXED</span></div>
+   <div class="row"><span>Object detection · 1,284 frames</span><span class="run">RUNNING</span></div>
+   <div class="row"><span>Speech-to-text · Hindi → English</span><span class="ok">DONE</span></div>
+   <div class="row"><span>Face redaction · release copy</span><span class="run">RUNNING</span></div>
+   <div class="row"><span>Classification label · RESTRICTED</span><span class="wt">REVIEW</span></div>
+   <div class="row"><span>SHA-256 custody hash</span><span class="ok">SEALED</span></div>
+   <div class="meter"><i></i></div>
+   <div style="color:var(--muted);font-size:11px">GPU cluster · 8 nodes · on-prem</div>
+  </div>
+ </div>
+</header>
+
+<section style="padding:56px 0">
+ <div class="wrap stats reveal">
+  <div><b class="grad">PB+</b><span>scale archives</span></div>
+  <div><b class="grad">40+</b><span>languages transcribed</span></div>
+  <div><b class="grad">200+</b><span>media & file formats</span></div>
+  <div><b class="grad">24/7</b><span>mission support</span></div>
+ </div>
+</section>
+
+<section id="platform" class="alt">
+ <div class="wrap">
+  <div class="head reveal"><div class="mono">The Platform</div><h2>One secure vault for every asset, every format, every classification level.</h2><p class="lead">A modular DAM built for organisations where media is evidence, intelligence or broadcast inventory — and losing control of it is not an option.</p></div>
+  <div class="grid g3">
+   <div class="card reveal"><div class="ico">⬇</div><h3>Ingest at scale</h3><p>Bring in footage, imagery, documents and audio from cameras, drones, satellites, newsroom systems and legacy tape archives.</p><ul><li>Watch folders, API, S3 & SFTP</li><li>Resumable uploads over weak links</li><li>Automatic proxy & thumbnail generation</li></ul></div>
+   <div class="card reveal"><div class="ico">⌕</div><h3>Search that understands content</h3><p>Find the exact moment, not just the file. Search spoken words, on-screen text, objects, faces, places and metadata together.</p><ul><li>Natural-language & semantic search</li><li>Visual similarity / reverse image</li><li>Geo & timeline search</li></ul></div>
+   <div class="card reveal"><div class="ico">◫</div><h3>Metadata & taxonomy</h3><p>Flexible schemas for mission data, rights, editorial and archival standards — enriched automatically by AI.</p><ul><li>Dublin Core, IPTC, XMP, KLV / MISB</li><li>Controlled vocabularies</li><li>Bulk edit & inheritance</li></ul></div>
+   <div class="card reveal"><div class="ico">✎</div><h3>Workflow & review</h3><p>Route assets through approval, redaction, legal and release stages with configurable, auditable workflows.</p><ul><li>Frame-accurate annotations</li><li>Multi-step approvals</li><li>SLA tracking & notifications</li></ul></div>
+   <div class="card reveal"><div class="ico">⇄</div><h3>Controlled distribution</h3><p>Share the right version with the right people — watermarked, time-limited and revocable.</p><ul><li>Forensic & visible watermarking</li><li>Expiring secure links</li><li>Transcode to any delivery profile</li></ul></div>
+   <div class="card reveal"><div class="ico">⌛</div><h3>Archive & preservation</h3><p>Tiered storage policies that keep hot assets fast and long-term archives cost-efficient and verifiable.</p><ul><li>Disk, object, LTO & cloud tiers</li><li>Fixity checks & integrity hashing</li><li>Retention & legal hold</li></ul></div>
+  </div>
+ </div>
+</section>
+
+<section id="ai">
+ <div class="wrap">
+  <div class="head reveal"><div class="mono">AI Processing Engine</div><h2>Turn raw media into searchable, actionable intelligence.</h2><p class="lead">Our AI engine runs on your infrastructure — including fully disconnected networks — so sensitive content never leaves your control.</p></div>
+  <div class="pipe">
+   <div class="card reveal"><h3>Ingest</h3><p>Normalise formats, extract embedded telemetry and generate proxies.</p></div>
+   <div class="card reveal"><h3>Perceive</h3><p>Detect objects, vehicles, faces, text, logos and scenes frame by frame.</p></div>
+   <div class="card reveal"><h3>Understand</h3><p>Transcribe, translate, summarise and link entities across assets.</p></div>
+   <div class="card reveal"><h3>Protect</h3><p>Auto-redact faces, plates and PII; flag sensitive material for review.</p></div>
+   <div class="card reveal"><h3>Deliver</h3><p>Push enriched assets, alerts and reports into downstream systems.</p></div>
+  </div>
+  <div class="grid g4" style="margin-top:20px">
+   <div class="card reveal"><h3>Computer vision</h3><p>Object, vehicle & aircraft detection, tracking, change detection on imagery.</p></div>
+   <div class="card reveal"><h3>Speech & language</h3><p>Multilingual transcription, translation and speaker identification, including Indian languages.</p></div>
+   <div class="card reveal"><h3>Generative summaries</h3><p>LLM-powered briefs, highlights and Q&amp;A over your archive — grounded in your sources.</p></div>
+   <div class="card reveal"><h3>Media forensics</h3><p>Deepfake & manipulation detection, provenance checks and C2PA support.</p></div>
+  </div>
+ </div>
+</section>
+
+<section id="industries" class="alt">
+ <div class="wrap">
+  <div class="head reveal"><div class="mono">Industries</div><h2>Built for organisations where media matters most.</h2></div>
+  <div class="tabs" role="tablist">
+   <button class="on" data-t="def">Defence & Intelligence</button><button data-t="gov">Government & Public Safety</button><button data-t="med">Media & Broadcast</button><button data-t="ent">Enterprise & Archives</button>
+  </div>
+  <div class="panel grid split on" id="def">
+   <div><h3 style="font-size:26px">From sensor to decision, faster.</h3><p class="lead" style="margin:12px 0 20px">Manage ISR full-motion video, satellite and drone imagery, and field reports in a single classified-ready repository with AI triage that surfaces what analysts need first.</p><span class="tag">ISR / FMV</span><span class="tag">GEOINT</span><span class="tag">OSINT</span><span class="tag">Training & simulation</span><span class="tag">Multi-level security</span></div>
+   <div class="card"><ul><li>MISB KLV metadata parsing and map-synchronised playback</li><li>Automatic detection & alerting on objects of interest</li><li>Deployable at tactical edge, HQ and air-gapped data centres</li><li>Classification labelling with need-to-know access controls</li><li>Full audit trail for every view, export and edit</li></ul></div>
+  </div>
+  <div class="panel grid split" id="gov">
+   <div><h3 style="font-size:26px">Evidence you can trust.</h3><p class="lead" style="margin:12px 0 20px">Bodycam, CCTV and investigation media with tamper-evident custody, automated redaction for public release, and retention aligned to policy.</p><span class="tag">Law enforcement</span><span class="tag">Smart cities</span><span class="tag">Disaster response</span><span class="tag">RTI / FOI release</span></div>
+   <div class="card"><ul><li>Chain of custody with cryptographic hashing</li><li>Bulk face, plate & PII redaction</li><li>Case-based organisation & secure court sharing</li><li>Data residency within national boundaries</li></ul></div>
+  </div>
+  <div class="panel grid split" id="med">
+   <div><h3 style="font-size:26px">Find it, cut it, ship it.</h3><p class="lead" style="margin:12px 0 20px">Newsrooms and broadcasters get instant archive search, auto-captioning, highlight generation and rights-aware distribution to every platform.</p><span class="tag">News</span><span class="tag">Sports</span><span class="tag">OTT</span><span class="tag">Archives & libraries</span><span class="tag">Rights management</span></div>
+   <div class="card"><ul><li>Spoken-word and visual archive search in seconds</li><li>Auto subtitles & translation in 40+ languages</li><li>AI clip & highlight generation for social</li><li>NLE integrations and MAM/PAM interoperability</li><li>Licensing, embargo & rights expiry tracking</li></ul></div>
+  </div>
+  <div class="panel grid split" id="ent">
+   <div><h3 style="font-size:26px">Your brand and history, organised.</h3><p class="lead" style="margin:12px 0 20px">Corporate communications, museums and research institutions use our platform to digitise, preserve and monetise decades of content.</p><span class="tag">Brand assets</span><span class="tag">Heritage digitisation</span><span class="tag">Research archives</span></div>
+   <div class="card"><ul><li>Legacy tape & film digitisation workflows</li><li>Brand portals with usage guidelines</li><li>Long-term preservation (OAIS-aligned)</li></ul></div>
+  </div>
+ </div>
+</section>
+
+<section id="security">
+ <div class="wrap">
+  <div class="head reveal"><div class="mono">Security & Compliance</div><h2>Security is the architecture, not a feature.</h2><p class="lead">Designed from day one for sensitive environments where data sovereignty, auditability and least-privilege access are mandatory.</p></div>
+  <div class="grid g3">
+   <div class="card reveal"><div class="ico">🔒</div><h3>Encryption everywhere</h3><p>AES-256 at rest, TLS 1.3 in transit, customer-held keys and HSM integration.</p></div>
+   <div class="card reveal"><div class="ico">🛡</div><h3>Zero-trust access</h3><p>SSO, MFA, smart-card / PKI login, attribute-based access and classification-aware permissions.</p></div>
+   <div class="card reveal"><div class="ico">📜</div><h3>Immutable audit</h3><p>Every action logged and hash-chained; export to your SIEM for continuous monitoring.</p></div>
+   <div class="card reveal"><div class="ico">🌐</div><h3>Data sovereignty</h3><p>Deploy entirely in-country, on your hardware, with no external call-home dependencies.</p></div>
+   <div class="card reveal"><div class="ico">⚙</div><h3>Secure SDLC</h3><p>Signed builds, SBOMs, dependency scanning and regular third-party penetration testing.</p></div>
+   <div class="card reveal"><div class="ico">✔</div><h3>Standards-aligned</h3><p>Built to align with ISO 27001, GDPR, India's DPDP Act and defence information-assurance guidelines.</p></div>
+  </div>
+ </div>
+</section>
+
+<section id="deploy" class="alt">
+ <div class="wrap">
+  <div class="head reveal"><div class="mono">Deployment Options</div><h2>Run it where your mission runs.</h2></div>
+  <div class="tw reveal">
+   <table>
+    <tr><th></th><th>Air-gapped</th><th>On-premises</th><th>Private / Gov cloud</th><th>Hybrid edge</th></tr>
+    <tr><td>Best for</td><td>Classified networks</td><td>Regulated enterprises</td><td>Agencies & broadcasters</td><td>Field & tactical ops</td></tr>
+    <tr><td>Internet required</td><td>No</td><td>Optional</td><td>Yes</td><td>Intermittent</td></tr>
+    <tr><td>AI on local GPUs</td><td>✓</td><td>✓</td><td>✓</td><td>✓ (compact nodes)</td></tr>
+    <tr><td>Updates</td><td>Signed offline bundles</td><td>Managed or self</td><td>Managed</td><td>Store-and-forward</td></tr>
+    <tr><td>Scale</td><td>TB → PB</td><td>TB → PB</td><td>Elastic</td><td>Edge → HQ sync</td></tr>
+   </table>
+  </div>
+ </div>
+</section>
+
+<section>
+ <div class="wrap">
+  <div class="head reveal"><div class="mono">Use Cases</div><h2>What teams do with ImRaghav.</h2><p class="lead">Representative scenarios our platform is designed to support.</p></div>
+  <div class="grid g3">
+   <div class="card reveal"><span class="tag">Defence</span><h3>Hours of drone video, triaged in minutes</h3><p>AI flags vehicles and activity in new FMV, so analysts review the 3% that matters instead of watching everything.</p></div>
+   <div class="card reveal"><span class="tag">Broadcast</span><h3>40 years of archive, searchable by speech</h3><p>Digitised tape libraries become searchable by what was said and shown, opening new licensing revenue.</p></div>
+   <div class="card reveal"><span class="tag">Public safety</span><h3>Release-ready footage without manual blurring</h3><p>Automated face and plate redaction with human review cuts release preparation from days to hours.</p></div>
+  </div>
+ </div>
+</section>
+
+<section id="about" class="alt">
+ <div class="wrap grid split">
+  <div class="reveal"><div class="mono">Company</div><h2>Engineering trust into the world's most sensitive media.</h2><p class="lead">ImRaghav Technologies is an engineering-led company combining deep expertise in media systems, applied AI and secure infrastructure. We partner with defence establishments, public agencies and media houses to modernise how they capture, understand and protect their content.</p>
+   <div class="card" style="margin-top:28px;display:flex;gap:18px;align-items:center"><div class="logo"><i style="width:56px;height:56px;border-radius:50%;font-size:20px">HR</i></div><div><h3 style="margin:0">Himanshu Raghav</h3><div class="mono">Founder & Chief Executive Officer</div><p style="margin-top:6px">Leads the company's vision, strategy and partnerships across defence, government and media.</p></div></div></div>
+  <div class="grid g2 reveal">
+   <div class="card"><h3>Mission first</h3><p>We build for the operator under pressure.</p></div>
+   <div class="card"><h3>Sovereign by design</h3><p>Your data, your infrastructure, your keys.</p></div>
+   <div class="card"><h3>Open & interoperable</h3><p>Standards-based APIs, no lock-in.</p></div>
+   <div class="card"><h3>Make in India</h3><p>Designed and engineered in India, for the world.</p></div>
+  </div>
+ </div>
+</section>
+
+<section>
+ <div class="wrap" style="max-width:860px">
+  <div class="head reveal"><div class="mono">FAQ</div><h2>Common questions</h2></div>
+  <details><summary>Can the platform run with no internet connection?</summary><p>Yes. Every component, including AI models, runs fully offline. Updates are delivered as signed, verifiable offline bundles.</p></details>
+  <details><summary>Which file formats are supported?</summary><p>All major video, image, audio and document formats, including broadcast codecs (ProRes, XDCAM, MXF), MPEG-TS with KLV, GeoTIFF, NITF, RAW camera formats and PDF/Office.</p></details>
+  <details><summary>Can we use our own AI models?</summary><p>Yes. Bring your own models through our model registry and they plug into the same pipelines, search and review workflows.</p></details>
+  <details><summary>How does it integrate with existing systems?</summary><p>REST & GraphQL APIs, webhooks, and connectors for common MAM, NLE, GIS, SIEM and identity systems.</p></details>
+  <details><summary>How is pricing structured?</summary><p>Licensing is based on deployment model, storage and processing capacity. Contact us for a tailored proposal.</p></details>
+ </div>
+</section>
+
+<section id="contact" class="alt">
+ <div class="wrap grid split">
+  <div class="reveal"><div class="mono">Contact</div><h2>Request a confidential briefing.</h2><p class="lead">Tell us about your mission and media challenges. Our solutions team will arrange a demo tailored to your environment.</p>
+   <p style="margin-top:28px;color:var(--muted)">✉ <a href="mailto:contact@imraghav.tech" style="color:var(--accent)">contact@imraghav.tech</a></p>
+  </div>
+  <form class="card reveal" onsubmit="event.preventDefault();var f=this;location.href='mailto:contact@imraghav.tech?subject='+encodeURIComponent('Briefing request — '+f.org.value)+'&body='+encodeURIComponent('Name: '+f.n.value+'\nOrganisation: '+f.org.value+'\nSector: '+f.s.value+'\n\n'+f.m.value)">
+   <input name="n" placeholder="Full name" required>
+   <input name="org" placeholder="Organisation" required>
+   <select name="s"><option>Defence & Intelligence</option><option>Government & Public Safety</option><option>Media & Broadcast</option><option>Enterprise & Archives</option></select>
+   <textarea name="m" rows="4" placeholder="How can we help?"></textarea>
+   <button class="btn primary" style="justify-content:center;cursor:pointer">Send request →</button>
+  </form>
+ </div>
+</section>
+
+<footer>
+ <div class="wrap">
+  <div class="grid">
+   <div><a href="#" class="logo" style="margin-bottom:12px"><i>iR</i>ImRaghav Technologies</a><p>Secure digital asset management and AI media intelligence for defence, government and media.</p></div>
+   <div><h4>Platform</h4><a href="#platform">DAM</a><a href="#ai">AI Engine</a><a href="#security">Security</a><a href="#deploy">Deployment</a></div>
+   <div><h4>Industries</h4><a href="#industries">Defence</a><a href="#industries">Government</a><a href="#industries">Media</a><a href="#industries">Enterprise</a></div>
+   <div><h4>Company</h4><a href="#about">About</a><a href="#contact">Contact</a></div>
+  </div>
+  <p>© <span id="y"></span> ImRaghav Technologies. All rights reserved.</p>
+ </div>
+</footer>
+
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tabs button,.panel').forEach(x=>x.classList.remove('on'));b.classList.add('on');document.getElementById(b.dataset.t).classList.add('on')});
+document.querySelectorAll('#links a').forEach(a=>a.onclick=()=>document.getElementById('links').classList.remove('open'));
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>

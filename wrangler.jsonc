@@ -1,0 +1,11 @@
+{
+  "name": "imraghav-site",
+  "compatibility_date": "2026-10-01",
+  "assets": { "directory": "docs", "not_found_handling": "404-page" },
+  "workers_dev": true
+  // After adding imraghav.tech as a zone in Cloudflare, add:
+  // ,"routes": [
+  //   { "pattern": "imraghav.tech", "custom_domain": true },
+  //   { "pattern": "www.imraghav.tech", "custom_domain": true }
+  // ]
+}
